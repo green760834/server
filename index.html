@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <style type="text/css">
+
+    </style>
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+
+    <div class="container text-center">
+      <h1 id="score">0</h1>
+    </div>
+
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-sm">
+         <button type="button" class="btn btn-secondary">Secondary</button>
+        </div>
+        <div class="col-sm">
+          <button type="button" class="btn btn-success">Success</button>
+        </div>
+        <div class="col-sm">
+          <button type="button" class="btn btn-danger">Danger</button>
+        </div>
+      </div>
+      
+      <div class="row justify-content-center">
+        <div class="col-sm">
+         <button type="button" class="btn btn-warning">Warning</button>
+        </div>
+        <div class="col-sm">
+          <button type="button" class="btn btn-info">Info</button>
+        </div>
+        <div class="col-sm">
+          <button type="button" class="btn btn-light">Light</button>
+        </div>
+      </div>
+      
+      <div class="row ">
+        <div class="col-sm">
+         <button type="button"  class="btn btn-primary">Primary</button>
+        </div>
+        <div class="col-sm">
+         <button type="button" class="btn btn-dark">Dark</button>
+        </div>
+        <div class="col-sm">
+          <button type="button" class="btn btn-link">Link</button>
+        </div>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.3.1.min.js" ></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js" ></script>
+
+
+    <script type="text/javascript">
+      $(".col-sm").css("min-height","200px");
+
+      $(".col-sm").addClass("text-center");
+
+      var score = 0;
+      var buttons = $("button");
+      $("button").click(function(){
+        var butNum =Math.floor(Math.random()*$("button").length) ;
+        if ($(this).hasClass("btn-primary") ==true){
+          score+=1;
+          $("#score").html(score);
+        }
+        $("button").attr("class", "");
+        $(buttons[butNum]).addClass("btn");
+        $(buttons[butNum]).addClass("btn-primary");
+      });
+
+    </script>
+
+  </body>
+</html>
